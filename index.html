@@ -88,9 +88,17 @@
             <h1 class="title is-1 publication-title">Fourier ActionNet Dataset</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://fourierintelligence.com">Fourier ActionNet Team</a>
+                <a href="https://fourierintelligence.com">Fourier ActionNet Team<sup>1</sup>,</a>
+              </span>
+              <span class="author-block">
+                <a href="https://yaomarkmu.github.io/">Yao Mu<sup>2</sup></a>
               </span>
 
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Fourier Co Ltd,</span>
+              <span class="author-block"><sup>2</sup>Shanghai Jiaotong University</span>
             </div>
 
             <div class="column has-text-centered">
@@ -191,7 +199,7 @@
           <source src="./static/videos/teaser.mp4" type="video/mp4">
         </video> -->
         <div class="column has-text-centered">
-          <img src="./static/images/overview.png" class="interpolation-image" alt=""
+          <img src="./static/images/object_category.jpg" class="interpolation-image" alt=""
             style="display: block; width: 100%; ; height:auto; margin: 0%" />
         </div>
         <h2 class=" subtitle has-text-centered">
@@ -207,26 +215,44 @@
     <div class="hero-body">
       <div class="container">
         <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-steve">
-            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/t1-pnp.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-chair-tp">
-            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/t1-pour.mp4" type="video/mp4">
-            </video>
-          </div>
           <div class="item item-shiba">
             <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/t2-pour.mp4" type="video/mp4">
+              <source src="./static/videos/vertical/t1-IDP3-lemon.mp4" type="video/mp4">
             </video>
           </div>
           <div class="item item-fullbody">
             <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/t5.mp4" type="video/mp4">
+              <source src="./static/videos/vertical/t5-act-lemon.mp4" type="video/mp4">
             </video>
           </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/vertical/t2-IDP3-lemon.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/vertical/t1-dp-pouring.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/vertical//t2-act-pouring.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/vertical/t1-act-pouring.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/vertical/t2-dp-pouring.mp4" type="video/mp4">
+            </video>
+          </div>
+
+
+
         </div>
       </div>
     </div>
@@ -282,90 +308,382 @@
 
 
   <section class="section">
-    <div class="container is-max-desktop">
+    <div class="container">
 
-      <div class="columns is-centered">
+      <!-- Full-width Title -->
+      <div class="has-text-centered">
+        <h2 class="title is-3">High Quality Data Collection Setup</h2>
+      </div>
 
-        <!-- Visual Effects. -->
+      <div class="content has-text-centered mt-5">
+        <!-- Full-width Large Image -->
+        <figure class="image is-inline-block" style="max-width: 700px;">
+          <img src="./static/images/teleop.jpg" alt="Teleoperation">
+        </figure>
+      </div>
+
+
+      <div class="content has-text-justified">
+
+        <!-- Full-width Description -->
+        <p>
+          To collect highly suitable and learnable data for humanoid training,
+          the dataset is gathered using a teleoperation system that replicates
+          the humanoid's first-person perspective. By aligning the vision system
+          with diverse tasks, objects, and environments, the captured data
+          ensures that the robot's performed skills closely resemble human actions,
+          making it more effective for training.
+        </p>
+      </div>
+
+      <!-- Two-column Layout -->
+      <div class="columns is-variable is-8 mt-1">
+
+        <!-- Left Column -->
         <div class="column">
+          <h3 class="title is-4">Environment & Hardware</h3>
           <div class="content">
-            <h2 class="title is-3">Trajectory Durations</h2>
             <p>
-              Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-              would be impossible without nerfies since it would require going through a wall.
+              This dataset captures humanoid performance in tabletop tasks such
+              as pick-and-place, pouring, and insertion across diverse environments
+              with varying conditions, objects, and scene layouts. It incorporates
+              multiple humanoid robots and dexterous hands to enhance variability
+              and adaptability. Vision data is collected using the OAK-D W camera,
+              providing a wide field of view to align with the humanoid's perspective.
+              The dataset includes recordings from <em>Fourier GR1-T1, GR1-T2, and GR2</em>
+              humanoids, along with two types of <em>Fourier Dexterous hands</em> featuring six and twelve
+              degrees of freedom. By integrating diverse hardware configurations,
+              this dataset supports robust learning and adaptability in real-world scenarios.
             </p>
-
-            <image src="./static/images/durations.png" class="interpolation-image" alt=""
-              style="display: block; width: 100%; ; height:auto; margin: 0%" />
           </div>
         </div>
-        <!--/ Visual Effects. -->
 
-        <!-- Matting. -->
+        <!-- Right Column -->
         <div class="column">
-          <h2 class="title is-3">Matting</h2>
-          <div class="columns is-centered">
-            <div class="column content">
-              <p>
-                As a byproduct of our method, we can also solve the matting problem by ignoring
-                samples that fall outside of a bounding box during rendering.
-              </p>
-              <video id="matting-video" controls playsinline height="100%">
-                <source src="./static/videos/matting.mp4" type="video/mp4">
-              </video>
-            </div>
-
+          <h3 class="title is-4">Teleoperation</h3>
+          <div class="content">
+            <p>
+              The teleoperation system utilizes Vision Pro as the primary control device,
+              enabling VR-based operation to ensure data collection from the humanoid's
+              first-person perspective. In this system, a robot operator manipulates the
+              humanoid using real-time visual feedback from its viewpoint, aligning their
+              perspectives for more natural and accurate data collection. Additionally,
+              the operator's actions, including hand movements, are directly transmitted to
+              the humanoid, ensuring that the performed skills closely resemble real human
+              execution, enhancing the humanoid's learning and adaptability.
+            </p>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Full-width Title -->
+      <div class="has-text-centered">
+        <h2 class="title is-3">Data Distribution</h2>
+      </div>
+
+      <!-- Full-width Large Image -->
+      <div class="content has-text-justified mt-1">
+        <figure class="image is-16by9">
+          <img src="./static/images/all.jpg" alt="Data Distribution">
+        </figure>
+      </div>
+
+      <!-- Main Topic -->
+      <div class="content mt-5">
+        <p>
+          The dataset provides insights into the distribution of tasks, objects, durations, and skills, ensuring a
+          balanced and diverse learning environment for humanoid training.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Task Distribution:</strong>
+            The pie chart shows the proportion of different task types. Noisy manipulation is the most frequent,
+            followed by pick-and-place, cabinet interaction, precise placement, and pouring. This variety ensures
+            robots experience a wide range of interactions.
+          </li>
+
+          <li>
+            <strong>Item Distribution:</strong>
+            A diverse range of objects, including tools, household items, and food, is used for training. The chart
+            highlights commonly interacted objects such as cups, clamps, and measuring tapes, ensuring robust
+            object-handling skills.
+          </li>
+
+          <li>
+            <strong>Duration Distribution:</strong>
+            The histogram represents task durations, with most actions falling in a mid-range duration. A well-balanced
+            distribution allows models to learn both short and prolonged interactions efficiently.
+          </li>
+
+          <li>
+            <strong>Skill Distribution:</strong>
+            The bar chart illustrates skill frequency, with reaching, placing, and holding as the most common.
+            The dataset captures both fundamental and complex actions, covering a wide spectrum of robotic skills.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Full-width Title -->
+      <div class="has-text-centered">
+        <h2 class="title is-2">Data Annotation</h2>
+      </div>
+
+      <!-- Paragraphs Only -->
+      <div class="content has-text-justified mt-2">
+        <p>
+          Given the large volume of collected data, manual annotation would be highly
+          time-consuming, labor-intensive, and repetitive. To enhance efficiency, a
+          Visual Language Model (VLM) is employed for automated annotation. Specifically,
+          the Qwen2.5-VL-7B model analyzes recorded videos and generates annotations
+          for each video stream. For accuracy, the generated annotations undergo a brief
+          review and verification. Through this process, all 30,000 data samples are
+          annotated with concise prompts averaging 53 words each.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Full-width Title -->
+      <div class="has-text-centered">
+        <h2 class="title is-3">Model Evaluation</h2>
+      </div>
+
+      <div class="content mt-1">
+        <p>
+          To ensure dataset diversity and quality, we have trained advanced imitation
+          learning algorithms on our data for multiple tasks. These include DP (Diffusion Policy),
+          iDP3 (Improved 3D Diffusion Policy), and ACT (Action Chunking with Transformers).
+          Below are the key features of each model.
+        </p>
+
+        <ul>
+          <li><strong>DP:</strong> Uses diffusion models to generate smooth and accurate action sequences.</li>
+          <li><strong>ACT:</strong> Segments long actions into short chunks for better prediction and control.</li>
+          <li><strong>IDP3:</strong> Enhances DP with egocentric 3D vision, improving generalization.</li>
+        </ul>
+      </div>
+
+      <div class="content mt-1">
+        <p>
+          Notably, all three models have demonstrated impressive performance on the Fourier
+          GR1-T1, GR1-T2, and GR2 humanoids. The training results are presented below:
+        </p>
+      </div>
+
+      <!-- Topic 1 -->
+      <h3 class="title is-4">Model Comparison</h3>
+      <p>Performance of DP, ACT, and iDP3 across various tasks.</p>
+
+      <!-- Video Grid for Model Comparison (3 videos per row) -->
+      <div class="columns is-multiline">
+
+        <div class="column is-one-third">
+          <figure class="image">
+            <video autoplay controls muted loop>
+              <source src="/static/videos/horizontal/t1-dp cup.mp4" type="video/mp4">
+            </video>
+            <figcaption class="has-text-centered">DP 1</figcaption>
+          </figure>
+        </div>
+
+        <div class="column is-one-third">
+          <figure class="image">
+            <video autoplay controls muted loop>
+              <source src="/static/videos/horizontal/t1-act open_cabinet.mp4" type="video/mp4">
+            </video>
+            <figcaption class="has-text-centered">ACT 1</figcaption>
+          </figure>
+        </div>
+
+        <div class="column is-one-third">
+          <figure class="image">
+            <video autoplay controls muted loop>
+              <source src="/static/videos/horizontal/t1-idp3 pouring.mp4" type="video/mp4">
+            </video>
+            <figcaption class="has-text-centered">IDP3 1</figcaption>
+          </figure>
+        </div>
+
+        <div class="column is-one-third">
+          <figure class="image">
+            <video autoplay controls muted loop>
+              <source src="/static/videos/horizontal/t2-dp cup.mp4" type="video/mp4">
+            </video>
+            <figcaption class="has-text-centered">DP 2</figcaption>
+          </figure>
+        </div>
+
+        <div class="column is-one-third">
+          <figure class="image">
+            <video autoplay controls muted loop>
+              <source src="/static/videos/horizontal/t2-act open_cabinet.mp4" type="video/mp4">
+            </video>
+            <figcaption class="has-text-centered">ACT 2</figcaption>
+          </figure>
+
+        </div>
+
+        <div class="column is-one-third">
+          <figure class="image">
+            <video autoplay controls muted loop>
+              <source src="/static/videos/horizontal/t2-idp3  pouring.mp4" type="video/mp4">
+            </video>
+            <figcaption class="has-text-centered">IDP3 2</figcaption>
+          </figure>
+        </div>
+
+      </div>
+
+      <!-- Topic 2 -->
+      <h3 class="title is-4">Humanoids Comparison</h3>
+      <p>Same model applied across different humanoids: GR1-T1, GR1-T2, and GR2.</p>
+
+      <!-- Video Grid for Humanoids Comparison (3 videos per row) -->
+      <div class="columns is-multiline">
+
+        <div class="column is-one-third">
+          <figure class="image">
+            <video autoplay controls muted loop>
+              <source src="/static/videos/horizontal/t1-act lemon.mp4" type="video/mp4">
+            </video>
+            <figcaption class="has-text-centered">ACT with GR1-T1</figcaption>
+          </figure>
+
+        </div>
+
+        <div class="column is-one-third">
+          <figure class="image">
+            <video autoplay controls muted loop>
+              <source src="/static/videos/horizontal/t2-ACT lemon.mp4" type="video/mp4">
+            </video>
+            <figcaption class="has-text-centered">ACT with GR1-T2</figcaption>
+          </figure>
+
+        </div>
+
+        <div class="column is-one-third">
+          <figure class="image">
+            <video autoplay controls muted loop>
+              <source src="/static/videos/horizontal/t5-act lemon.mp4" type="video/mp4">
+            </video>
+            <figcaption class="has-text-centered">ACT with GR2</figcaption>
+          </figure>
+
         </div>
       </div>
-      <!--/ Matting. -->
-
-
-
-
-      <!-- Concurrent Work. -->
-      <!-- <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Related Links</h2>
-
-          <div class="content has-text-justified">
-            <p>
-              There's a lot of excellent work that was introduced around the same time as ours.
-            </p>
-            <p>
-              <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an
-              idea similar to our windowed position encoding for coarse-to-fine optimization.
-            </p>
-            <p>
-              <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a
-                href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-              both use deformation fields to model non-rigid scenes.
-            </p>
-            <p>
-              Some works model videos with a NeRF by directly modulating the density, such as <a
-                href="https://video-nerf.github.io/">Video-NeRF</a>, <a
-                href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a
-                href="https://neural-3d-video.github.io/">DyNeRF</a>
-            </p>
-            <p>
-              There are probably many more by the time you are reading this. Check out <a
-                href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a
-                href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-            </p>
-          </div>
-        </div>
-      </div> -->
-      <!--/ Concurrent Work. -->
 
     </div>
   </section>
 
 
+
+
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Full-width Title -->
+      <div class="has-text-centered">
+        <h2 class="title is-2">Open Source Training Pipeline</h2>
+      </div>
+
+      <!-- Paragraphs Only -->
+      <div class="content has-text-justified mt-2">
+        <p>
+          To embrace the exciting future of humanoids, we welcome everyone interested
+          in humanoid development to join us in advancing this field. As part of this
+          effort, we are providing our training pipeline, which includes the ACT, DP,
+          and IDP3 algorithms. Our training pipeline and data format follow the LEROBOT
+          structure, ensuring a more convenient and well-organized framework. For full
+          details, please check our Hugging Face page.
+        </p>
+      </div>
+
+
+      <div class="column">
+        <h3 class="title is-4">Model Introduction</h3>
+      </div>
+
+      <div class="content mt-1">
+        <p>
+          For those unfamiliar with imitation learning, we have provided a brief introduction
+          to these algorithms. With the information and training pipelines we offer, you can
+          choose a model that aligns with your research direction. We are pleased that if our
+          dataset can contribute to accelerating the development of humanoids in the future.
+        <ul>
+          <li>
+            <a href="https://github.com/real-stanford/diffusion_policy" target="_blank">
+              <strong>DP:</strong>
+            </a>
+            Traditional imitation learning methods often map observations directly to
+            action outputs, but struggle with high-dimensional state spaces or complex
+            and dynamic environments. To improve this, DP (Diffusion Policy) method
+            starts from random noise and leverages a diffusion model to progressively
+            generate action distributions, achieving precise action sequence prediction
+            through multi-stage denoising. The DP method provides a novel and efficient
+            solution for robot control, advancing the application and development of
+            imitation learning in the robotics field.
+          </li>
+
+          <li>
+            <a href="https://tonyzhaozh.github.io/aloha/" target="_blank">
+              <strong>ACT:</strong>
+            </a>
+            ACT (Action Chunking with Transformers) is designed for robotic imitation
+            learning and action prediction. Traditional approaches often map inputs
+            directly to continuous action outputs, which can lead to accumulated errors
+            and action jitter when handling complex tasks. ACT addresses this issue by
+            spliting long action sequences into several short, relatively independent
+            action chunks, and using Transformer to model and predict these chunks.
+            This method makes actions easier to predict and learn while reducing the
+            risk of overall error accumulation.
+          </li>
+
+          <li>
+            <a href="https://github.com/YanjieZe/3D-Diffusion-Policy" target="_blank">
+              <strong>IDP3:</strong>
+            </a>
+            iDP3 (Improved 3D Diffusion Policy) builds upon the DP method with further
+            improvements, proposing an innovative strategy specifically designed for 3D
+            visual input and action prediction. Traditional approaches are inherently
+            dependent on precise camera calibration and fine-grained point cloud
+            segmentation, whereas the iDP3 method eliminates these constraints by
+            leveraging egocentric 3D visual representations. The iDP3 model shows
+            exceptional generalization capability, enhancing the utility and adaptability
+            of humanoid robots in new environments.
+          </li>
+        </ul>
+        </p>
+
+      </div>
+    </div>
+
+  </section>
+
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{gao2025actionnet,
-  author    = {Gao, Yuxiang and Hu, Shuo and Liu, Jiyuan and Tao, Renzhi and Cai, Yusheng},
+  author    = {Fourier ActionNet Team, Yao Mu},
   title     = {ActionNet: A dataset for dexterous bimanual manipulation},
   year      = {2025},
 }</code></pre>
