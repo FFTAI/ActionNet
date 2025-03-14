@@ -296,7 +296,7 @@
 
       <!-- Full-width Title -->
       <div class="has-text-centered">
-        <h2 class="title is-3">High Quality Data Collection Setup</h2>
+        <h2 class="title is-3">Data Collection Setup</h2>
       </div>
 
       <div class="content has-text-centered mt-5">
@@ -311,8 +311,7 @@
 
         <!-- Full-width Description -->
         <p>
-          To collect highly suitable and learnable data for humanoid training,
-          the dataset is gathered using a teleoperation system that replicates
+          The dataset is gathered using a teleoperation system that replicates
           the humanoid's first-person perspective. By aligning the vision system
           with diverse tasks, objects, and environments, the captured data
           ensures that the robot's performed skills closely resemble human actions,
@@ -332,7 +331,8 @@
               as pick-and-place, pouring, and insertion across diverse environments
               with varying conditions, objects, and scene layouts. It incorporates
               multiple humanoid robots and dexterous hands to enhance variability
-              and adaptability. Vision data is collected using the OAK-D W camera,
+              and adaptability. Vision data is collected using the <a
+                href="https://shop.luxonis.com/products/oak-d-w?variant=44149271265503">OAK-D W 97 camera</a>,
               providing a wide field of view to align with the humanoid's perspective.
               The dataset includes recordings from <em>Fourier GR1-T1, GR1-T2, and GR2</em>
               humanoids, along with two types of <em>Fourier Dexterous hands</em> featuring six and twelve
@@ -347,7 +347,6 @@
           <h3 class="title is-4">Teleoperation</h3>
           <div class="content">
             <p>
-
               <a href="https://github.com/FFTAI/teleoperation">
                 The teleoperation system
               </a>
@@ -383,12 +382,16 @@
           To embrace the exciting future of humanoids, we welcome everyone interested
           in humanoid development to join us in advancing this field. As part of this
           effort, we are providing our training pipeline, which includes the ACT, DP,
-          and IDP3 algorithms. Our training pipeline and data format follow the LEROBOT
-          structure, ensuring a more convenient and well-organized framework. For full
-          details, please check our
-          <a href="https://github.com/FFTAI/fourier-lerobot" target="_blank">
-            <strong>Fourier-Lerobot repository.</strong>
+          and IDP3 algorithms. Our training pipeline and data format follow the <a
+            href="https://github.com/huggingface/lerobot/tree/fe483b1d0d4ad8506f61924d905943eaa6d3ece0">LeRobotDatasetV2
           </a>
+          structure, ensuring a more convenient and well-organized framework. For full
+          details, please check out our
+          <a href="https://github.com/FFTAI/fourier-lerobot" target="_blank">
+            <strong>fork</strong>
+          </a>, which provides the necessary scripts to visualize our data and convert our data into LeRobotDatasetV2
+          format.
+          Also, we provide an implementation of iDP3 in the LeRobot framework.
         </p>
       </div>
 
@@ -403,13 +406,13 @@
       <div class="content has-text-justified mt-2">
         <p>
 
-          Our dataset is collected using a teleoperation system that supports VR-based
-          interaction. The system is available in our official
+          Our dataset is collected using a VR-based teleoperation system. The system is available in our official
           <a href="https://github.com/FFTAI/teleoperation" target="_blank">
             <strong>Teleoperation repository.</strong>
           </a>
-          This repository provides resources for data collection, as well as model evaluation
-          scripts that use the same teleoperation system. As a result, policies trained
+          This repository provides resources for data collection, as well as model deployment
+          scripts that use the same codebase.
+          As a result, policies trained
           with our dataset and training pipeline can be seamlessly deployed within the
           same system, minimizing discrepancies between training and real-world execution.
         </p>
@@ -437,37 +440,40 @@
       <!-- Main Topic -->
       <div class="content">
         <p>
-          The dataset provides insights into the distribution of tasks, objects, durations, and skills, ensuring a
-          balanced and diverse learning environment for humanoid training.
+          The dataset provides diverse tasks, objects, durations, and skills:
         </p>
 
-        <ul>
+        <ol type="a">
           <li>
             <strong>Task Distribution:</strong>
-            The pie chart shows the proportion of different task types. Noisy manipulation is the most frequent,
-            followed by pick-and-place, cabinet interaction, precise placement, and pouring. This variety ensures
-            robots experience a wide range of interactions.
+            The chart shows the distribution of different task types. Noisy manipulation is the most frequent,
+            followed by pick-and-place, cabinet interaction, precise placement, and pouring.
+            The main focus is on tabletop bimanual manipulation tasks, with a variety of actions to ensure robust skill
+            learning.
           </li>
 
           <li>
             <strong>Item Distribution:</strong>
-            A diverse range of objects, including tools, household items, and food, is used for training. The chart
-            highlights commonly interacted objects such as cups, clamps, and measuring tapes, ensuring robust
+            A diverse range of objects, including tools, household items, and food, is used during collection. Our
+            dataset
+            features common household and office objects such as cups, clamps, and measuring tapes, ensuring robust
             object-handling skills.
           </li>
 
           <li>
             <strong>Duration Distribution:</strong>
-            The histogram represents task durations, with most actions falling in a mid-range duration. A well-balanced
+            The histogram shows the distribution of task durations. With most trajectories around 15s long, our dataset
+            has a nice mix of short and long tasks. A
+            well-balanced
             distribution allows models to learn both short and prolonged interactions efficiently.
           </li>
 
           <li>
             <strong>Skill Distribution:</strong>
-            The bar chart illustrates skill frequency, with reaching, placing, and holding as the most common.
+            The distribution of skill ranges among reaching, placing, holding and more.
             The dataset captures both fundamental and complex actions, covering a wide spectrum of robotic skills.
           </li>
-        </ul>
+        </ol>
       </div>
     </div>
   </section>
@@ -484,14 +490,17 @@
       <!-- Paragraphs Only -->
       <div class="content has-text-justified mt-2">
         <p>
-          Given the large volume of collected data, manual annotation would be highly
-          time-consuming, labor-intensive, and repetitive. To enhance efficiency, a
-          Visual Language Model (VLM) is employed for automated annotation. Specifically,
-          the Qwen2.5-VL-7B model analyzes recorded videos and generates annotations
-          for each video stream. For accuracy, the generated annotations undergo a brief
-          review and verification. Through this process, all 30,000 data samples are
-          annotated with concise prompts averaging 53 words each.
+          We annotated the data automatically with a
+          Vision-Language Model (Qwen2.5-VL-7B). Specifically,
+          the model extracts 26 frames from the recorded videos and generates annotations
+          for each video stream with a prompt like: "What verbal instruction would you give the robot to perform the
+          task in the video?"
         </p>
+        <p>
+          The generated annotations were then manually reviewed and verified. Through this process, all 30,000
+          data
+          samples are annotated with concise prompts averaging 53 words each. Allowing the dataset to be used for
+          imitation learning, VLA, and world model training. </p>
       </div>
     </div>
   </section>
@@ -508,25 +517,16 @@
 
       <div class="content mt-1">
         <p>
-          To ensure dataset diversity and quality, we have trained advanced imitation
-          learning algorithms on our data for multiple tasks:
+          To test the quality of our dataset, we have trained imitation
+          learning algorithms on our data across multiple tasks.
+          Specifically, we have evaluated the performance of three popular
+          models: <strong><a href="https://diffusion-policy.cs.columbia.edu">DP</a></strong>, <strong><a
+              href="https://github.com/tonyzhaozh/act">ACT</a></strong>, and <strong><a
+              href="https://humanoid-manipulation.github.io/">iDP3</a></strong>.
         </p>
-
-        <ul>
-          <li><strong><a href="https://diffusion-policy.cs.columbia.edu">DP:</a></strong> Uses diffusion models to
-            generate
-            smooth and accurate action sequences.</li>
-          <li><strong><a href="https://github.com/tonyzhaozh/act">ACT:</a></strong> Segments long actions into short
-            chunks for better prediction and control.</li>
-          <li><strong><a href="https://humanoid-manipulation.github.io/">iDP3:</a></strong> Enhances DP with egocentric
-            3D vision, improving generalization.</li>
-        </ul>
-      </div>
-
-      <div class="content mt-1">
         <p>
           Notably, all three models have demonstrated impressive performance on the Fourier
-          GR1-T1, GR1-T2, and GR2 humanoids. The training results are presented below:
+          GR1, GR1-Pro, and GR2 humanoids:
         </p>
       </div>
 
