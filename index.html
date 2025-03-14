@@ -137,7 +137,7 @@
                 </span> -->
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/FFTAI" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/FFTAI/fourier-lerobot" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -400,8 +400,12 @@
           <h3 class="title is-4">Teleoperation</h3>
           <div class="content">
             <p>
-              The teleoperation system utilizes Vision Pro as the primary control device,
-              enabling VR-based operation to ensure data collection from the humanoid's
+              
+              <a href ="https://github.com/FFTAI/teleoperation">
+                The teleoperation system
+              </a> 
+              utilizes Vision Pro as the primary control device, enabling VR-based 
+              operation to ensure data collection from the humanoid's
               first-person perspective. In this system, a robot operator manipulates the
               humanoid using real-time visual feedback from its viewpoint, aligning their
               perspectives for more natural and accurate data collection. Additionally,
@@ -427,13 +431,13 @@
 
       <!-- Full-width Large Image -->
       <div class="content has-text-justified mt-1">
-        <figure class="image is-16by9">
-          <img src="./static/images/all.jpg" alt="Data Distribution">
+        <figure class="image is-16by9" style="max-width: 1200px;">
+          <img src="./static/images/all.svg" alt="Data Distribution">
         </figure>
       </div>
 
       <!-- Main Topic -->
-      <div class="content mt-5">
+      <div class="content">
         <p>
           The dataset provides insights into the distribution of tasks, objects, durations, and skills, ensuring a
           balanced and diverse learning environment for humanoid training.
@@ -632,9 +636,6 @@
   </section>
 
 
-
-
-
   <section class="section">
     <div class="container">
 
@@ -643,23 +644,7 @@
         <h2 class="title is-2">Open Source Training Pipeline</h2>
       </div>
 
-      <!-- Paragraphs Only -->
-      <div class="content has-text-justified mt-2">
-        <p>
-          To embrace the exciting future of humanoids, we welcome everyone interested
-          in humanoid development to join us in advancing this field. As part of this
-          effort, we are providing our training pipeline, which includes the ACT, DP,
-          and IDP3 algorithms. Our training pipeline and data format follow the LEROBOT
-          structure, ensuring a more convenient and well-organized framework. For full
-          details, please check our
-          <a href="https://github.com/FFTAI/fourier-lerobot" target="_blank">
-            <strong>Github.</strong>
-          </a>
-        </p>
-      </div>
-
-
-      <div class="column">
+      <div class="column mt-5">
         <h3 class="title is-4">Model Introduction</h3>
       </div>
 
@@ -702,7 +687,7 @@
             <a href="https://github.com/YanjieZe/3D-Diffusion-Policy" target="_blank">
               <strong>IDP3:</strong>
             </a>
-            iDP3 (Improved 3D Diffusion Policy) builds upon the DP method with further
+            IDP3 (Improved 3D Diffusion Policy) builds upon the DP method with further
             improvements, proposing an innovative strategy specifically designed for 3D
             visual input and action prediction. Traditional approaches are inherently
             dependent on precise camera calibration and fine-grained point cloud
@@ -714,6 +699,44 @@
         </ul>
         </p>
 
+      </div>
+
+      <div class="column">
+        <h3 class="title is-4">Training</h3>
+      </div>
+
+      <!-- Paragraphs Only -->
+      <div class="content has-text-justified">
+        <p>
+          To embrace the exciting future of humanoids, we welcome everyone interested
+          in humanoid development to join us in advancing this field. As part of this
+          effort, we are providing our training pipeline, which includes the ACT, DP,
+          and IDP3 algorithms. Our training pipeline and data format follow the LEROBOT
+          structure, ensuring a more convenient and well-organized framework. For full
+          details, please check our
+          <a href="https://github.com/FFTAI/fourier-lerobot" target="_blank">
+            <strong>Fourier-Lerobot repository.</strong>
+          </a>
+        </p>
+      </div>
+
+      <div class="column">
+        <h3 class="title is-4">Data Collection & Model Evaluation</h3>
+      </div>
+
+      <div class="content has-text-justified">
+        <p>
+
+        Our dataset is collected using a teleoperation system that supports VR-based 
+        interaction. The system is available in our official
+        <a href="https://github.com/FFTAI/teleoperation" target="_blank">
+          <strong>Teleoperation repository.</strong>
+        </a>
+        This repository provides resources for data collection, as well as model evaluation 
+        scripts that use the same teleoperation system. As a result, policies trained 
+        with our dataset and training pipeline can be seamlessly deployed within the 
+        same system, minimizing discrepancies between training and real-world execution.
+        </p>
       </div>
     </div>
 
@@ -734,9 +757,6 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
-          <i class="fas fa-file-pdf"></i>
-        </a>
         <a class="icon-link" href="https://github.com/FFTAI" class="external-link" disabled>
           <i class="fab fa-github"></i>
         </a>
